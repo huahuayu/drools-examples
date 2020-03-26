@@ -1,0 +1,11 @@
+import java.util.Map;
+import java.util.Date;
+import static cn.liushiming.drools.common.DroolsUtil.*;
+
+rule "测试强规则03101602"
+when
+	Map($numA:this['numA'],$numA.class==Double);
+	Map(numberGreaterOrEqualThan($numA,10.0001D));
+then
+    System.out.println("numA >= 10.0001D");
+end;
